@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Desi Kaarigari – The Art You Wear</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Marcellus+SC|Laila&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Laila', serif;
+            background: linear-gradient(120deg, #ffe3e3 0%, #f4c6c6 100%);
+            color: #463667;
+        }
+        .logo {
+            display: block;
+            margin: 24px auto 10px auto;
+            width: 130px;
+            border-radius: 22px;
+            background: rgba(255,255,255,0.18);
+            box-shadow: 0 3px 18px #ad7d7d1b;
+            transition: transform 0.2s, filter 0.2s;
+        }
+        .logo:hover {
+            transform: scale(1.08);
+            filter: drop-shadow(0 0 15px #ad7d7d55);
+        }
+        header { text-align: center; }
+        .navbar {
+            background: #ad7d7d;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-size: 1.15em;
+            box-shadow: 0 2px 8px #d9aaa0;
+        }
+        .navbar a {
+            color: #fff5f5;
+            text-decoration: none;
+            letter-spacing: 2px;
+            font-family: 'Marcellus SC', serif;
+            transition: color 0.3s, background 0.3s;
+        }
+        .navbar a:hover, .active {
+            color: #463667;
+            background: #ffe3e3;
+            border-radius: 10px;
+            padding: 8px 12px;
+        }
+        main {
+            max-width: 860px;
+            margin: 40px auto 20px auto;
+            background: rgba(255,255,255,0.62);
+            border-radius: 2em;
+            box-shadow: 0 0 24px #ddc3b6;
+            padding: 34px 28px;
+            animation: fadein 1s;
+            position: relative;
+        }
+        @keyframes fadein {
+            from { opacity: 0; transform: translateY(40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .section-title {
+            font-family: 'Marcellus SC', serif;
+            font-size: 2em;
+            margin-bottom: 18px;
+            color: #ad7d7d;
+            border-bottom: 2px solid #ad7d7d77;
+            letter-spacing: 1px;
+        }
+        .hero {
+            background: linear-gradient(120deg, #ffe3e3 85%, #ddb5b5 100%);
+            border-radius: 1.5em;
+            padding: 38px 28px 29px 28px;
+            box-shadow: 0 2px 18px #ad7d7d13;
+            text-align: center;
+            margin-bottom: 36px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero img { width: 130px; margin-bottom:8px; position:relative; z-index:2; }
+        .hero h1 {
+            font-size: 2em;
+            font-family: 'Marcellus SC', serif;
+            margin-bottom: 8px;
+            color:#ad7d7d;
+        }
+        .hero p.live-feature {
+            font-family: 'Marcellus SC', serif;
+            font-size: 1.16em; color:#744d4d;
+            background:#fffbeadd;
+            border-radius:1em;
+            padding:8px 14px;margin:18px auto 14px auto;display:inline-block;
+            box-shadow:0 1px 6px #ad7d7d17;
+            min-width:280px;
+            transition: background 0.8s;
+        }
+        /* Moving shadow behind logo */
+        #logoShadow {
+            position:absolute; top:50%; left:50%;
+            transform: translate(-50%, -50%);
+            width:140px; height:140px; border-radius:50%;
+            background: radial-gradient(circle, rgba(173,125,125,0.2) 0%, transparent 80%);
+            z-index:1;
+            filter: blur(12px);
+            animation: shadowMove 3s infinite alternate ease-in-out;
+        }
+        @keyframes shadowMove {
+            0% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+            50% { transform: translate(-52%, -48%) scale(1.05) rotate(3deg); }
+            100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+        }
+        /* Scrolling ticker */
+        #ticker {
+            display:inline-block;
+            padding-left:100%;
+            font-weight:bold; 
+            font-family:'Marcellus SC', serif;
+            color:#ad7d7d; 
+            font-size:1.2em;
+            white-space:nowrap;
+            animation: tickerMove 20s linear infinite;
+        }
+        @keyframes tickerMove {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        .features { margin-top:40px; display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+        .feature-card { background: #fffbead7; box-shadow:0 0 18px #ad7d7d13; border-radius:1em; padding: 18px 22px; width:220px; text-align:center; font-size:1.06em; }
+        .cta-section { margin:34px auto 0 auto; background:#ffe3e380; border-radius:1em; text-align:center; padding:28px 13px 18px 13px; box-shadow:0 0 10px #ddd7d813; }
+        .cta-section button { background: #ad7d7d; color: #fff; border:none; border-radius: 1em; padding:9px 32px; font-family: 'Marcellus SC', serif; font-size: 1.11em; margin:13px 8px 0 8px; cursor:pointer; transition: background 0.2s; }
+        .cta-section button:active { background: #463667; }
+        .hashtag { font-size: 1.09em; margin-top: 16px; letter-spacing:2px; font-family: 'Marcellus SC', serif; color: #ad7d7d; background: #fffbead7; border-radius: 1em; padding: 7px 19px; display: inline-block; }
+        .product-grid { display: flex; flex-wrap: wrap; gap: 32px; justify-content: center; }
+        .product-card { background: #fff9f8; border-radius: 1em; box-shadow: 0 2px 12px #ad7d7d44; width: 200px; padding: 18px; text-align: center; position:relative; transition: transform 0.25s; cursor:pointer;}
+        .product-card:hover { transform: scale(1.05) rotate(-2deg); box-shadow: 0 0 18px #ad7d7dab; }
+        .product-card img { width: 110px; height: 110px; object-fit: cover; border-radius: 50%; border: 2px solid #ad7d7d77; }
+        .product-title { font-weight:600; margin: 10px 0 4px 0; white-space: pre-line; }
+        .product-price { font-family: 'Marcellus SC', serif; color: #ad7d7d; font-size: 1.1em; margin-bottom: 5px; }
+        .page {display: none;}
+        .page.active {display: block; animation: fadein 0.6s;}
+        /* New Features */
+        .emoji-bar {
+          background: #ffd1cc;
+          text-align: center;
+          padding: 7px 0 6px 0;
+          font-size: 1.7em;
+          letter-spacing: 0.4em;
+          font-family: 'Marcellus SC', serif;
+          border-bottom: 2px solid #ffc1c1;
+          overflow: hidden;
+        }
+        .emoji-rotator { 
+          display: inline-block;
+          vertical-align: middle;
+          min-width: 1.5em;
+          animation: emojiFade 1.4s infinite alternate;
+        }
+        @keyframes emojiFade { 
+          from { opacity: 0.6; filter: blur(0.5px);}
+          to   { opacity: 1;   filter: blur(0);}
+        }
+        .ad-banner {
+          margin: 0 auto 30px auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 19px;
+          background: linear-gradient(102deg, #fcebe1af 65%, #ffd7c2af 100%);
+          border-radius: 1.3em;
+          box-shadow: 0 2px 14px #c8a4981b;
+          min-height: 74px;
+          padding: 19px 24px 14px 20px;
+          font-family: 'Marcellus SC', serif;
+          font-size: 1.07em;
+          position: relative;
+          overflow-x: auto;
+          cursor: pointer;
+          transition: transform 0.1s;
+        }
+        .ad-banner:hover { transform: scale(1.018);}
+        .ad-banner span {
+          font-weight: bold;
+          color: #ad7d7d;
+        }
+        .ad-cta-btn {
+          background: #ad7d7d;
+          color: #fff;
+          border: none;
+          border-radius: 1em;
+          font-family: 'Marcellus SC', serif;
+          font-size: 1.02em;
+          padding: 8px 23px;
+          transition: background 0.2s;
+          margin-left: 18px;
+          cursor: pointer;
+        }
+        .ad-cta-btn:hover { background: #463667;}
+        .key-theme-box {
+          background: linear-gradient(100deg,#ffe3e3 50%, #fff8ec 100%);
+          border-radius: 1.2em;
+          box-shadow: 0 2px 14px #dfc6c617;
+          margin: 34px auto 8px auto;
+          padding: 23px 18px 14px 18px;
+          font-size: 1.09em;
+          color: #744d4d;
+          max-width: 520px;
+        }
+        .key-theme-box .kt-title {
+          font-family: 'Marcellus SC', serif; 
+          font-size:1.25em;
+          color:#ad7d7d; margin-bottom:11px; font-weight:bold;
+          display: block;
+        }
+        .key-theme-box ul { 
+          margin: 0 0 0 9px; padding: 0; list-style: none; 
+        }
+        .key-theme-box li { 
+          margin-bottom: 11px;
+          display: flex;
+          align-items: flex-start;
+        }
+        .key-theme-icon { font-size:1.2em; margin-right:10px; min-width:1.7em;}
+        .spotify-box {
+          margin: 36px auto 0 auto;
+          max-width: 420px;
+          background: linear-gradient(116deg, #fff8ed 88%, #ffe3e3 100%);
+          border-radius: 1.4em;
+          box-shadow: 0 2px 16px #ebd5d361;
+          padding: 18px 15px 18px 15px;
+          text-align: center;
+          border: 1px solid #eecec7b5;
+        }
+        .spotify-title {
+          font-family: 'Marcellus SC', serif;
+          font-size: 1.13em;
+          margin-bottom: 7px;
+          color: #ad7d7d;
+        }
+        .spotify-box a { color: #463667; text-decoration:none; font-weight:bold;}
+        #productModal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.67); justify-content:center; align-items:center; z-index:999;}
+        #productModal .modal-box {
+          background:#fff;
+          border-radius:1.3em;
+          padding:27px; max-width:430px; width:94%;
+          position:relative;
+          text-align:center;
+          box-shadow:0 8px 32px #ad7d7d33;
+          animation: fadein 0.6s;
+        }
+        #productModal .close-btn {
+          position:absolute; top:10px; right:15px;
+          font-size:1.5em; color:#ad7d7d;
+          cursor:pointer;
+          font-family:'Marcellus SC', serif;
+        }
+        #productModal img {
+          width:222px; border-radius:17px; margin-bottom:19px; border:2.7px solid #f6d5c8;
+        }
+        #productModal .modal-title { font-weight:bold; font-size:1.28em; margin-bottom:7px; color:#ad7d7d;}
+        #productModal .modal-price { color:#ad7d7d; font-size:1.14em; margin-bottom:11px;}
+        #productModal .modal-desc { font-size:1.07em; color:#744d4d; margin-bottom:7px;}
+    </style>
+</head>
+<body>
+    <div class="emoji-bar">
+        <span id="rotatingEmoji" class="emoji-rotator">🪔</span> Desi vibes all the way!
+    </div>
+    <header>
+        <img src="https://i.ibb.co/yFkdBT5H/Whats-App-Image-2025-10-18-at-08-39-58.jpg" class="logo" alt="Logo" style="margin-top:12px;">
+        <nav class="navbar">
+            <a href="#" id="navHome" onclick="showPage('home')">Home</a>
+            <a href="#" id="navAbout" onclick="showPage('about')">About Us</a>
+            <a href="#" id="navShop" onclick="showPage('shop')">Shop</a>
+            <a href="#" id="navInitiative" onclick="showPage('initiative')">Initiatives</a>
+            <a href="#" id="navContact" onclick="showPage('contact')">Contact Us</a>
+        </nav>
+    </header>
+    <main>
+        <!-- HOME PAGE -->
+        <section id="home" class="page active">
+            <!-- Interactive Ad Banner -->
+            <div class="ad-banner" onclick="window.open('https://www.instagram.com/desi.kaarigari','_blank')">
+                <span>NEW!</span> <span style="font-size:1.36em;">✨</span>
+                Discover our <b>Diwali Edit</b> — luminous jewels for every festival moment!
+                <button class="ad-cta-btn"
+                    onclick="window.open('https://www.instagram.com/desi.kaarigari','_blank'); event.stopPropagation();">Shop Now</button>
+            </div>
+            <div class="hero" style="position:relative; overflow:hidden;">
+                <!-- Semi-transparent background image behind logo, extra large & high -->
+                <img src="https://i.ibb.co/xqBd72W1/Whats-App-Image-2025-10-20-at-16-26-32.jpg"
+                    alt="Background Art"
+                    style="position:absolute; left:50%; top:19%; width:550px; opacity:0.25; transform:translate(-50%,-50%); z-index:1; pointer-events:none;"/>
+                <div id="logoShadow"></div>
+                <img src="https://i.ibb.co/yFkdBT5H/Whats-App-Image-2025-10-18-at-08-39-58.jpg" alt="Logo" style="position:relative; z-index:2;"><br>
+                <h1>Desi Kaarigari</h1>
+                <div>
+                    <p class="live-feature" id="liveFeature"></p>
+                </div>
+                <p>The art you wear, the story you share</p>
+                <p>Handcrafted Indian Jewellery &bull; Made by Local Artisans &bull; Every piece tells a story.</p>
+                <p>Direct Message {DM} us on Instagram to order!.</p>
+                <div class="cta-section">
+                    <b>Ready to explore timeless tradition?</b><br>
+                    <button onclick="showPage('shop')">Browse Our Collection</button>
+                    <button onclick="showPage('about')">Our Purpose</button>
+                </div>
+                <div style="position:absolute; bottom:10px; width:100%; overflow:hidden;">
+                    <div id="ticker">
+                        🌟 Durga Maa Rani Haar – Celebrate Tradition &nbsp;&nbsp; | &nbsp;&nbsp;
+                        🌸 Flora Varnika Set – Vibrance of Nature &nbsp;&nbsp; | &nbsp;&nbsp;
+                        💫 Flora Earrings – Handcrafted Beauty &nbsp;&nbsp; | &nbsp;&nbsp;
+                        🤝 Empowering Women Artisans &nbsp;&nbsp; | &nbsp;&nbsp;
+                        ♻️ Sustainable & Eco-friendly Jewelry
+                    </div>
+                </div>
+            </div>
+            <div class="features">
+                <div class="feature-card"><b>🌿 Sustainable Craft</b><br>Eco-friendly and ethical sourcing</div>
+                <div class="feature-card"><b>👩‍🎨 Women Empowerment</b><br>Supporting local artisan communities</div>
+                <div class="feature-card"><b>📦 Fast Shipping</b><br>Careful packaging & express delivery</div>
+                <div class="feature-card"><b>💬 Chat Support</b><br>Quick answers, always</div>
+            </div>
+            <!-- Key Theme Box -->
+            <div class="key-theme-box">
+                <span class="kt-title">🏆 Key theme: Vocal for Local</span>
+                <ul>
+                    <li><span class="key-theme-icon">🏆</span>Vocal for Local is a major focus of the Buildathon.</li>
+                    <li><span class="key-theme-icon">🧑‍🎨</span>Promotes local products and crafts to support small businesses and artisans.</li>
+                    <li><span class="key-theme-icon">💡</span>Encourages innovation in marketing, technology, and supply chain for local industries.</li>
+                    <li><span class="key-theme-icon">🌱</span>Empowers communities to make local offerings more sustainable and competitive.</li>
+                    <li><span class="key-theme-icon">🇮🇳</span>Strengthens self-reliance (Atmanirbhar Bharat) and boosts local economies.</li>
+                </ul>
+            </div>
+            <!-- Spotify Box -->
+            <div class="spotify-box">
+                <div class="spotify-title">
+                    Listen to our <a href="https://open.spotify.com/playlist/780T9K8C5KdkESaF9oZEy2?si=P_LExQB9TkqGtwmyJ8_B9Q" target="_blank">desiii&lt;3</a> playlist for perfect vibes!
+                </div>
+                <iframe style="border-radius:11px" src="https://open.spotify.com/embed/playlist/780T9K8C5KdkESaF9oZEy2?si=aCXHWOvpSnu0fQXx4YA79A&pi=AZ35BjSSS4OpU&pt_success=1&nd=1&dlsi=37e219b4276b4671" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="hashtag">#DesiKaarigari | #vocalforlocal</div>
+            <p>DESI KAARIGARI ~by Swadeshi Spark⭐️💕 
+               (Kanika Reddu and Shambhavi Yadav).</p>
+        </section>
+        <!-- ABOUT US PAGE -->
+        <section id="about" class="page">
+            <div class="section-title">🧶 Our Mission</div>
+            <p>At Desi Kaarigari, we believe that <b>every handmade ornament carries a spark of India’s cultural soul.</b> We aim to:</p>
+            <ul>
+                <li>Promote <b>traditional Indian jewellery crafts</b> (like Meenakari, Lac, Filigree)</li>
+                <li>Empower <b>local women artisans</b> by helping them earn and grow</li>
+                <li>Keep Indian handwork alive by connecting it to new audiences</li>
+            </ul>
+            <p>This is a <b>commerce-for-impact platform</b> — small in scale but rich in heart.</p>
+            <img src="https://i.ibb.co/yFkdBT5H/Whats-App-Image-2025-10-18-at-08-39-58.jpg" class="logo" alt="Handcrafted Indian Jewellery" style="width:100px;margin-top:18px;">
+        </section>
+        <!-- SHOP PAGE -->
+        <section id="shop" class="page">
+            <div class="section-title">🛍️ Shop Jewellery</div>
+            <div class="product-grid">
+                <div class="product-card" data-title="Tribal Charm Necklace" data-price="₹249" data-img="https://i.ibb.co/8n8gF7Yz/j8.jpg" data-desc="Handcrafted tribal necklace with unique charm." onclick="showModal(this)">
+                    <img src="https://i.ibb.co/8n8gF7Yz/j8.jpg" alt="Tribal Charm Necklace">
+                    <div class="product-title">Tribal Charm Necklace</div>
+                    <div class="product-price">₹249</div>
+                </div>
+                <div class="product-card" data-title="Floral Lei Black Set" data-price="₹499" data-img="https://i.ibb.co/h1DbsS9q/j7.jpg" data-desc="Elegant floral set, perfect for festive occasions." onclick="showModal(this)">
+                    <img src="https://i.ibb.co/h1DbsS9q/j7.jpg" alt="Floral Lei Black Set">
+                    <div class="product-title">Floral Lei Black Set</div>
+                    <div class="product-price">₹499</div>
+                </div>
+                <div class="product-card" data-title="Gulbahaar Neck Piece" data-price="₹349" data-img="https://i.ibb.co/dJwvrHrK/j6.jpg" data-desc="Beautiful Gulbahaar design, handcrafted with love." onclick="showModal(this)">
+                    <img src="https://i.ibb.co/dJwvrHrK/j6.jpg" alt="Gulbahaar Neck Piece">
+                    <div class="product-title">Gulbahaar Neck Piece</div>
+                    <div class="product-price">₹349</div>
+                </div>
+                <div class="product-card" data-title="Rangini Earrings" data-price="₹99" data-img="https://i.ibb.co/Q7kGwsxG/j5.jpg" data-desc="Bright and colorful Rangini earrings." onclick="showModal(this)">
+                    <img src="https://i.ibb.co/Q7kGwsxG/j5.jpg" alt="Rangini Earrings">
+                    <div class="product-title">Rangini Earrings</div>
+                    <div class="product-price">₹99</div>
+                </div>
+                <div class="product-card" data-title="Flora Varnika Set" data-price="₹449" data-img="https://i.ibb.co/SDSRbCSK/j3.jpg" data-desc="Flora-inspired set, vibrant and elegant." onclick="showModal(this)">
+                    <img src="https://i.ibb.co/SDSRbCSK/j3.jpg" alt="Flora Varnika Set">
+                    <div class="product-title">Flora Varnika Set</div>
+                    <div class="product-price">₹449</div>
+                </div>
+                <div class="product-card" data-title="Durga Maa Rani Haar" data-price="₹699" data-img="https://i.ibb.co/h1RMzg68/j4.jpg" data-desc="Traditional Durga Maa necklace, powerful and elegant." onclick="showModal(this)">
+                    <img src="https://i.ibb.co/h1RMzg68/j4.jpg" alt="Durga Maa Rani Haar">
+                    <div class="product-title">Durga Maa Rani Haar</div>
+                    <div class="product-price">₹699</div>
+                </div>
+                <div class="product-card" data-title="Madhubani Mor Standard Haar" data-price="₹349" data-img="https://i.ibb.co/hJzL2298/6d6b3843-93e0-4213-a032-e2e29fae92e5.jpg" data-desc="Madhubani-inspired peacock necklace, artistic and unique." onclick="showModal(this)">
+                    <img src="https://i.ibb.co/hJzL2298/6d6b3843-93e0-4213-a032-e2e29fae92e5.jpg" alt="Madhubani Mor Standard Haar">
+                    <div class="product-title">Madhubani Mor Standard Haar</div>
+                    <div class="product-price">₹349</div>
+                </div>
+            </div>
+            <p style="text-align: center;">Hey pretty! Found something good? DM us on @desi.kaarigari.</p>
+        </section>
+        <!-- INITIATIVE PAGE -->
+        <section id="initiative" class="page">
+            <div class="section-title">🎨 Student & Artisan Collaboration</div>
+            <p style="font-size:1.1em; color:#744d4d; line-height:1.6;">
+                Bringing together students of design/fashion with local jewellery makers for co-design, documentation, and learning experiences.
+            </p>
+            <p style="margin-top:16px; font-size:1.1em;">
+                Want to collaborate? 
+                <a href="https://www.instagram.com/desi.kaarigari/?next=%2F" target="_blank" style="color:#ad7d7d; font-weight:bold; text-decoration:none;">Click here to reach us on Instagram</a>
+            </p>
+        </section>
+        <!-- CONTACT US PAGE -->
+        <section id="contact" class="page">
+            <div class="section-title">📞 Contact Us</div>
+            <p>Whether you’re an artisan, customer, volunteer, or just curious:</p>
+            <ul>
+                <li>📩 <b>Email:</b> kaarigaridesi@gmail.com</li>
+                <li>📍 Location: Delhi, India</li>
+                <li>📱 Instagram: <a href="https://www.instagram.com/desi.kaarigari" target="_blank">@desi.kaarigari</a></li>
+            </ul>
+        </section>
+    </main>
+    <!-- Product Modal -->
+    <div id="productModal">
+        <div class="modal-box">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <img id="modalImg" src="" alt="">
+            <div class="modal-title" id="modalTitle"></div>
+            <div class="modal-price" id="modalPrice"></div>
+            <div class="modal-desc" id="modalDesc"></div>
+        </div>
+    </div>
+    <script>
+        // Emoji Rotator
+        const emojis = ["🪔","🎉","🥁","🧿","🎨","🪷","🕉️","🪙","🎊","👑","🌸","🍃","🏵️","🧵"];
+        let emojiIndex = 0;
+        setInterval(()=>{
+          emojiIndex = (emojiIndex+1)%emojis.length;
+          document.getElementById('rotatingEmoji').innerText = emojis[emojiIndex];
+        }, 1250);
+
+        // -------- Home Page Live Feature --------
+        window.onload = function() {
+            rotateLiveFeature();
+        };
+        var features = [
+            "🌟 Durga Maa Rani Haar – A tribute to tradition and power",
+            "🌸 Flora Varnika Set – Celebrate the vibrance of nature",
+            "💫 Flora Earings – Dainty, beautiful, hand-embellished",
+            "🤝 Empowering Women Artisans",
+            "♻️ Sustainable, Eco-friendly, Soulful"
+        ];
+        var featureIndex = 0;
+        function rotateLiveFeature() {
+            document.getElementById("liveFeature").innerText = features[featureIndex];
+            featureIndex = (featureIndex + 1) % features.length;
+        }
+        setInterval(rotateLiveFeature, 2600);
+
+        // Page Switcher
+        function showPage(page) {
+            var pages = document.getElementsByClassName("page");
+            for (var i = 0; i < pages.length; i++) pages[i].classList.remove("active");
+            document.getElementById(page).classList.add("active");
+            var navs = {home:'navHome',about:'navAbout',shop:'navShop',initiative:'navInitiative',contact:'navContact'};
+            for (var key in navs) if(document.getElementById(navs[key]))document.getElementById(navs[key]).classList.remove('active');
+            document.getElementById(navs[page]).classList.add('active');
+        }
+        // Product Modal
+        function showModal(card) {
+          var img = card.dataset.img, title = card.dataset.title, price = card.dataset.price, desc = card.dataset.desc;
+          document.getElementById('modalImg').src = img;
+          document.getElementById('modalTitle').innerText = title;
+          document.getElementById('modalPrice').innerText = price;
+          document.getElementById('modalDesc').innerText = desc;
+          document.getElementById('productModal').style.display = 'flex';
+        }
+        function closeModal() {
+          document.getElementById('productModal').style.display = 'none';
+        }
+        window.onclick = function(event) {
+          var modal = document.getElementById('productModal');
+          if (event.target == modal) closeModal();
+        }
+    </script>
+</body>
+</html>
